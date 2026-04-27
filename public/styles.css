@@ -1,0 +1,754 @@
+:root {
+  --bg: #f5eedf;
+  --bg-strong: #efe3c8;
+  --panel: rgba(247, 239, 224, 0.92);
+  --panel-strong: #fbf5e8;
+  --ink: #2c2418;
+  --muted: #76684f;
+  --line: rgba(73, 57, 32, 0.18);
+  --line-strong: rgba(73, 57, 32, 0.3);
+  --accent: #a36b16;
+  --accent-soft: rgba(163, 107, 22, 0.12);
+  --shadow: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: Consolas, "Courier New", monospace;
+  background:
+    radial-gradient(circle at top left, rgba(163, 107, 22, 0.11), transparent 24%),
+    radial-gradient(circle at top right, rgba(113, 146, 122, 0.12), transparent 22%),
+    linear-gradient(180deg, #f8f2e6 0%, #f5eedf 48%, #efe7d5 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.pageShell {
+  padding-top: 18px;
+}
+
+.pageNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: rgba(251, 245, 232, 0.86);
+  box-shadow: none;
+}
+
+.pageNav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.terminalPortfolio {
+  /*width: min(1360px, calc(100% - 80px));*/
+  width: min(100%, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 26px 0 88px;
+}
+
+.terminalShell,
+.terminalPanel,
+.hookShowcase {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: none;
+}
+
+.terminalShell {
+  overflow: hidden;
+}
+
+.terminalHeader,
+.terminalTicker,
+.terminalPanelBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--line);
+  font-family: Consolas, "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.terminalBrand,
+.terminalNav,
+.terminalActions,
+.terminalTagRow,
+.terminalProjectButtonTop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.terminalBrand {
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.terminalPrompt,
+.tickerBadge,
+.terminalSectionTag,
+.statLabel {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.terminalCursor {
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  display: inline-block;
+}
+
+.terminalNav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.terminalNav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.terminalTicker {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.tickerBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 5px 8px;
+  border: 1px solid var(--line-strong);
+  background: rgba(44, 36, 24, 0.08);
+}
+
+.tickerText {
+  flex: 1;
+  min-width: 180px;
+}
+
+.tickerMeta {
+  white-space: nowrap;
+}
+
+.terminalHero {
+  padding: 32px 22px 34px;
+}
+
+.terminalHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.terminalHeroCopy {
+  min-width: 0;
+}
+
+.terminalCommand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92rem;
+}
+
+.cmdPrompt {
+  color: var(--accent);
+}
+
+.cmdText,
+.terminalRole,
+.terminalDescription,
+.terminalPanelBody p,
+.terminalPanelBody li,
+.timelineTerminalHeader p {
+  color: var(--muted);
+}
+
+.terminalRole {
+  margin: 0 0 14px;
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.terminalHero h1,
+.terminalSectionHeading h2,
+.terminalContactPanel h2,
+.terminalPanelBody h3 {
+  margin: 0;
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.terminalHero h1 {
+  max-width: none;
+  margin-bottom: 18px;
+  font-size: clamp(1.8rem, 2.6vw, 3.2rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.terminalDescription {
+  max-width: 58ch;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.terminalHeroVisual {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  align-content: center;
+  padding: 0 28px 0 10px;
+}
+
+.terminalPortraitFrame {
+  width: min(100%, 320px);
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--line-strong);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0)),
+    rgba(255, 255, 255, 0.32);
+  padding: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.terminalPortrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 999px;
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.terminalPortraitMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  width: min(100%, 430px);
+  color: var(--muted);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.terminalActions {
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.terminalButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.38);
+  text-decoration: none;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.terminalButtonPrimary {
+  background: var(--ink);
+  color: #f8f2e6;
+}
+
+.terminalGridSection,
+.terminalCapabilities,
+.terminalFooterGrid {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.terminalGridSection {
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+}
+
+.terminalPanelBody {
+  padding: 22px;
+}
+
+.terminalPanelWide h2,
+.terminalSectionHeading h2,
+.terminalContactPanel h2 {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  line-height: 1.02;
+  max-width: none;
+}
+
+.terminalPanelBody h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.terminalStats {
+  display: grid;
+  gap: 18px;
+}
+
+.terminalStats strong {
+  display: block;
+  margin-top: 6px;
+}
+
+.statLabel {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.terminalTagRow {
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.terminalTag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.45);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.terminalTagDim {
+  color: var(--muted);
+}
+
+.terminalCapabilities {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.capabilityTerminalCard h3 {
+  font-size: 1.25rem;
+}
+
+.capabilityTerminalCard p,
+.terminalProjectPreview p,
+.terminalContactPanel p,
+.terminalPanelBody p,
+.terminalPanelBody li {
+  line-height: 1.75;
+}
+
+.terminalSectionBlock {
+  margin-top: 22px;
+}
+
+.terminalSectionHeading {
+  margin-bottom: 18px;
+}
+
+.terminalTimeline {
+  display: grid;
+  gap: 18px;
+}
+
+.timelineTerminalHeader {
+  margin-bottom: 16px;
+}
+
+.timelineTerminalHeader p {
+  margin: 6px 0 0;
+}
+
+.terminalList {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.terminalCompactList {
+  margin-top: 12px;
+}
+
+.terminalProjectLayout {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.terminalProjectRail {
+  display: grid;
+  gap: 14px;
+}
+
+.terminalProjectButton {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.36);
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+.terminalProjectButton strong,
+.terminalProjectButton small {
+  display: block;
+}
+
+.terminalProjectButton strong {
+  margin: 10px 0 6px;
+  font-size: 1rem;
+}
+
+.terminalProjectButton small,
+.terminalProjectButtonTop,
+.terminalPanelBar {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.terminalTypingTitle {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.12em;
+}
+
+.terminalTypingCursor {
+  display: inline-block;
+  width: 0.6ch;
+  height: 0.9em;
+  margin-bottom: 0.08em;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px rgba(163, 107, 22, 0.14);
+  animation: terminalTypingBlink 0.95s steps(1) infinite;
+  flex: 0 0 auto;
+}
+
+.terminalScrollType {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-height: 1.1em;
+}
+
+.terminalScrollTypeInner {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.terminalTypingCursorInline {
+  position: absolute;
+  left: calc(100% + 0.14em);
+  bottom: 0.08em;
+  margin-bottom: 0;
+}
+
+.terminalTypingCursorHidden {
+  opacity: 0;
+}
+
+@keyframes terminalTypingBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.terminalSectionHeading h2,
+.terminalPanelWide h2,
+.terminalContactPanel h2 {
+  text-wrap: normal;
+}
+
+.terminalProjectButtonActive {
+  border-color: var(--line-strong);
+  background: var(--accent-soft);
+}
+
+.terminalProjectPreview h3 {
+  margin-top: 12px;
+}
+
+.terminalFooterGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.terminalContactPanel {
+  margin-top: 22px;
+}
+
+.hookShowcase {
+  padding: 24px;
+}
+
+.hookShowcaseTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.hookTitle {
+  margin: 12px 0 14px;
+  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  max-width: 11ch;
+}
+
+.hookIntro {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.04rem;
+}
+
+.hookMetaPanel,
+.hookCard,
+.hookComposer {
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+}
+
+.hookMetaPanel {
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.hookBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.hookStatus {
+  display: grid;
+  gap: 6px;
+}
+
+.hookStatusLabel,
+.hookCardEyebrow {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.hookStatus strong {
+  font-size: 1.05rem;
+}
+
+.hookStatus small {
+  color: var(--muted);
+}
+
+.hookComposer {
+  margin-top: 20px;
+  padding: 22px;
+}
+
+.hookFieldLabel {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.hookInput {
+  width: 100%;
+  min-height: 56px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0 16px;
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.hookInput:focus {
+  border-color: rgba(163, 107, 22, 0.42);
+  box-shadow: 0 0 0 4px rgba(163, 107, 22, 0.08);
+}
+
+.hookMirror {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.hookGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.hookCard {
+  padding: 24px;
+}
+
+.hookCard h3 {
+  margin: 10px 0 12px;
+  font-size: 1.55rem;
+}
+
+.hookCardText {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hookMetricRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 20px 0 18px;
+}
+
+.hookMetricValue {
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.hookMetricLabel {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hookButton {
+  min-height: 48px;
+  border: 1px solid var(--line-strong);
+  padding: 0 16px;
+  background: var(--ink);
+  color: #f8f2e6;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+  .terminalCapabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .terminalGridSection,
+  .terminalProjectLayout,
+  .terminalFooterGrid,
+  .terminalHeroGrid,
+  .hookShowcaseTop,
+  .hookGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .terminalPanelWide h2,
+  .terminalSectionHeading h2,
+  .terminalContactPanel h2 {
+    max-width: none;
+  }
+
+  .terminalHero h1 {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminalTypingCursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .terminalPortfolio,
+  .pageNav {
+    width: min(100% - 16px, 1360px);
+  }
+
+  .terminalHeader,
+  .terminalTicker,
+  .terminalPanelBar,
+  .terminalHero,
+  .terminalPanelBody,
+  .hookShowcase,
+  .hookMetaPanel,
+  .hookComposer,
+  .hookCard {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .terminalHeader,
+  .terminalTicker {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .terminalHeroVisual {
+    justify-items: center;
+    padding: 0;
+  }
+
+  .terminalNav,
+  .terminalActions {
+    gap: 10px;
+  }
+
+  .terminalHero h1,
+  .hookTitle {
+    max-width: none;
+  }
+
+  .terminalCapabilities {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "adaptive dev",
+    "build": "adaptive build",
+    "start": "adaptive start",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@adaptivejs/ft": "^0.1.2",
+    "@adaptivejs/ui": "^0.1.2",
+    "@adaptivejs/web": "^0.1.2"
+  },
+  "devDependencies": {
+    "@adaptivejs/cli": "^0.1.2",
+    "@types/node": "^24.6.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.8.2"
+  }
+}
