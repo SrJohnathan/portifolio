@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "adaptive dev",
-    "build": "npx @adaptivejs/cli build",
+    "build": "adaptive build",
     "start": "adaptive start",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
