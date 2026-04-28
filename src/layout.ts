@@ -4,7 +4,6 @@ import { createRouter } from "@adaptivejs/web/server";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === "production";
-
 export default async function render(url: string) {
   return createRouter(url, [], {
     isProduction,
