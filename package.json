@@ -6,7 +6,7 @@
     "dev": "adaptive dev",
     "build": "adaptive build",
     "build:node": "adaptive build --preset node",
-    "build:netlify": "adaptive build --preset netlify && node ./scripts/netlify-fix-redirects.mjs",
+    "build:netlify": "adaptive build --preset netlify",
     "build:vercel": "adaptive build --preset vercel",
     "preview:node": "npm run build:node && adaptive preview --preset node",
     "preview:netlify": "npm run build:netlify && adaptive preview --preset netlify",
@@ -15,13 +15,13 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@adaptivejs/ft": "^0.1.5",
-    "@adaptivejs/ui": "^0.1.5",
-    "@adaptivejs/web": "^0.1.5"
+    "@adaptivejs/ft": "^0.1.7",
+    "@adaptivejs/ui": "^0.1.7",
+    "@adaptivejs/web": "^0.1.7"
   },
   "devDependencies": {
-    "@adaptivejs/cli": "^0.1.5",
-    "@adaptivejs/static": "^0.1.5",
+    "@adaptivejs/cli": "^0.1.7",
+    "@adaptivejs/static": "^0.1.7",
     "@types/node": "^24.6.0",
     "tsx": "^4.20.6",
     "typescript": "^5.8.2"
