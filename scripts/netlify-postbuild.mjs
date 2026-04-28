@@ -20,7 +20,7 @@ await fs.cp(runtimeClientDir, path.join(outputDir, "_adaptive"), {
 });
 await fs.writeFile(
   path.join(outputDir, "_redirects"),
-  "/* /.netlify/functions/main 200!\n",
+  "/* /.netlify/functions/server 200!\n",
   "utf8",
 );
 
