@@ -5,3 +5,8 @@ publish = ".output/netlify"
 [functions]
 directory = ".output/netlify/server"
 
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/server"
+status = 200
+force = true
