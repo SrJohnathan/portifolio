@@ -1,8 +1,10 @@
 node_modules
 dist
+.adaptivejs
 *.log
 /.env.example
 
 # Local Netlify folder
 .netlify
+.vercel
 /package-lock.json

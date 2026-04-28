@@ -1,6 +1,6 @@
 [build]
 command = "npm install && npm run build:netlify"
-publish = ".output/netlify"
+publish = ".adaptivejs/output/netlify"
 
 [functions]
-directory = ".output/netlify/server"
+directory = ".adaptivejs/output/netlify/server"
