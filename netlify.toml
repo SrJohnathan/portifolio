@@ -1,6 +1,11 @@
 [build]
-command = "npm install && npm run build:netlify"
+command = "npm ci && npm run build:netlify"
 publish = ".output/netlify"
 
 [functions]
 directory = ".output/netlify/server"
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/server"
+status = 200
