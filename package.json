@@ -7,6 +7,7 @@
     "build": "adaptive build",
     "build:node": "adaptive build --preset node",
     "build:netlify": "adaptive build --preset netlify",
+    "postbuild:netlify": "node ./scripts/netlify-postbuild.mjs",
     "build:vercel": "adaptive build --preset vercel",
     "preview:node": "npm run build:node && adaptive preview --preset node",
     "preview:netlify": "npm run build:netlify && adaptive preview --preset netlify",
@@ -15,13 +16,13 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@adaptivejs/ft": "^0.1.3",
-    "@adaptivejs/ui": "^0.1.3",
-    "@adaptivejs/web": "^0.1.3"
+    "@adaptivejs/ft": "^0.1.4",
+    "@adaptivejs/ui": "^0.1.4",
+    "@adaptivejs/web": "^0.1.4"
   },
   "devDependencies": {
-    "@adaptivejs/cli": "^0.1.3",
-    "@adaptivejs/static": "^0.1.3",
+    "@adaptivejs/cli": "^0.1.4",
+    "@adaptivejs/static": "^0.1.4",
     "@types/node": "^24.6.0",
     "tsx": "^4.20.6",
     "typescript": "^5.8.2"
